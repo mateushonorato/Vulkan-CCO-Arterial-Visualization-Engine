@@ -22,7 +22,7 @@ These instructions guide AI coding agents working in this repository. Focus on t
   ./VulkanCCOEngine
   popd
   ```
-- Arch Linux packages (examples): `vulkan-headers`, `vulkan-icd-loader`, `vulkan-tools`, `shaderc`, `glfw`, `glm`.
+- Arch Linux packages (examples): `vulkan-headers`, `vulkan-icd-loader`, `vulkan-tools`, `shaderc`, `vulkan-memory-allocator`, `glfw`, `glm`.
 - CMake finds Vulkan via CMake, pkg-config, or `$VULKAN_SDK`. If missing, it errors with guidance.
 - Shaders: CMake compiles `shaders/*.glsl` using `glslc` and infers stage from filename (`vert`/`frag` or `.vert`/`.frag`).
 
@@ -62,7 +62,7 @@ Phase II (TP2 – 3D):
 ## Vulkan Architecture & Performance
 - Vulkan Version: Target Vulkan 1.3.
 - Pipeline: Prefer Dynamic Rendering (`VK_KHR_dynamic_rendering`) over legacy `VkRenderPass`/`VkFramebuffer` for simplicity and performance.
-- Memory: Integrate Vulkan Memory Allocator (VMA) for all buffers/images. Initialize VMA after `VkDevice` creation; include `#define VMA_IMPLEMENTATION` once in a single `.cpp`.
+- Memory: Integrate Vulkan Memory Allocator (VMA) for all buffers/images (system package: Arch `vulkan-memory-allocator`). Initialize VMA after `VkDevice` creation; include `#define VMA_IMPLEMENTATION` once in a single `.cpp`.
 - Debugging: Enable validation layers (`VK_LAYER_KHRONOS_validation`) and `VK_EXT_debug_utils` during development.
 - Clearing: Use `VK_ATTACHMENT_LOAD_OP_CLEAR` at render start (or `vkCmdClearColorImage` when applicable).
 - Swapchain: Handle `VK_ERROR_OUT_OF_DATE_KHR` / `VK_SUBOPTIMAL_KHR` by recreating the swapchain on resize/stale.
