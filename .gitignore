@@ -1,0 +1,67 @@
+# C/C++ build artifacts
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.exe
+*.out
+*.app
+
+# CMake build folders
+build/
+cmake-build-debug/
+cmake-build-release/
+CMakeFiles/
+CMakeCache.txt
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+*.ninja
+.ninja_deps
+.ninja_log
+
+# Compile commands
+compile_commands.json
+
+# Vulkan/SPIR-V caches and binaries
+*.spv
+*.spvcache
+.cache/
+
+# Shader intermediate files
+shaders/*.spv
+shaders/bin/
+
+# IDE/editor junk
+.vscode/
+.idea/
+.clangd/
+.clang-tidy
+.clang-format
+*.code-workspace
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and temp
+*.log
+logs/
+.tmp/
+
+# Vendor binaries
+vendor/bin/
+vendor/lib/
+
+# Generated docs/artifacts
+/docs/**/*.mp4
+/docs/**/*.mov
+/docs/**/*.zip
+
+# Insync/Google Drive conflict files
+* (Conflicted copy)*
